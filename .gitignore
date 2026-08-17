@@ -1,0 +1,19 @@
+# LaTeX build litter — the CV is compiled by GitHub Actions, not committed
+# half-built. cv.pdf itself IS committed (the site serves it), so it is not
+# ignored here.
+cv/*.aux
+cv/*.bbl
+cv/*.bcf
+cv/*.blg
+cv/*.fdb_latexmk
+cv/*.fls
+cv/*.log
+cv/*.out
+cv/*.run.xml
+cv/*.synctex.gz
+cv/*.toc
+
+# OneDrive / Windows / macOS cruft
+desktop.ini
+Thumbs.db
+.DS_Store

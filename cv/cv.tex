@@ -1,0 +1,167 @@
+% Simen Aardal Ulsaker — academic CV.
+%
+% This is the SINGLE SOURCE for the cv.pdf served at https://sulsaker.github.io/cv.pdf.
+% Pushing a change to this file triggers .github/workflows/build-cv.yml, which
+% compiles it with TeX Live in the cloud and commits the PDF to the repo root.
+% Do not edit cv.pdf by hand — it will be overwritten.
+%
+% Replace this whole file with your Overleaf source when you're ready; the only
+% requirement is that the file stays named cv/cv.tex and compiles with pdflatex.
+%
+% STARTER CONTENT: the publication list below is complete and current. The
+% education and employment sections are marked TODO — fill them in (or paste
+% them over from Overleaf).
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+% Section headings: small caps over a full-width rule.
+\titleformat{\section}{\large\scshape}{}{0pt}{}[\vspace{-0.6em}\rule{\textwidth}{0.4pt}]
+\titlespacing{\section}{0pt}{1.4em}{0.6em}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=0.45em, topsep=0.3em}
+\pagestyle{empty}
+
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\\}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries Simen Aardal Ulsaker}\\[0.4em]
+  Associate Professor, Oslo Business School, OsloMet\\
+  Pilestredet 35, 0166 Oslo, Norway\\
+  \href{mailto:simen.ulsaker@gmail.com}{simen.ulsaker@gmail.com} \quad$\cdot$\quad
+  \href{https://sulsaker.github.io}{sulsaker.github.io}
+\end{center}
+
+\section{Fields of Interest}
+Industrial organization; applied microeconomics; competition and regulation;
+retail and grocery markets; vertical relationships.
+
+\section{Employment}
+\begin{itemize}
+  \item \entry{Associate Professor, Oslo Business School, OsloMet}{TODO--present}
+  \item \textit{TODO: earlier positions.}
+\end{itemize}
+
+\section{Education}
+\begin{itemize}
+  \item \textit{TODO: PhD, institution, year. Earlier degrees.}
+\end{itemize}
+
+\section{Publications}
+\begin{itemize}
+  \item ``Exclusionary Contracts and Incentives to Innovate.''
+        \textit{Games}, 17(1), 8 (2026).
+
+  \item ``Cross-border Shopping of Alcohol -- What is the Effect on Tax Revenue
+        and Sales and Which Products Are Most Affected?'' (with Richard Friberg
+        and Frode Steen). \textit{Review of International Economics}, 33(5)
+        (2025), pp.~1021--1034.
+
+  \item ``The effect of cross-border shopping on commodity tax revenue: results
+        from Norway's COVID-19 border closings'' (with Richard Friberg, Emil
+        Halseth and Frode Steen). \textit{Scandinavian Journal of Economics},
+        126(4) (2024). \textit{Awarded the SJE prize for the best article
+        published in 2024.}
+
+  \item ``Co-location, good, bad or both: How does new entry of discount variety
+        store affect local grocery business?'' (with Charlotte B. Evensen and
+        Frode Steen). \textit{Journal of the European Economic Association},
+        22(4) (2024), pp.~1798--1843.
+
+  \item ``Competition and risk taking in local bank markets: Evidence from the
+        business loans segment'' (with Chiara Canta and Øivind Anti Nilsen).
+        \textit{Journal of Empirical Finance}, 73 (2023), pp.~153--169.
+
+  \item ``Hump-shaped cross-price effects and the extensive margin in
+        cross-border shopping'' (with Richard Friberg and Frode Steen).
+        \textit{American Economic Journal: Microeconomics}, 14(2) (2022),
+        pp.~408--38.
+
+  \item ``Bank consolidation, interest rates, and risk: A post-merger analysis
+        based on loan-level data from the corporate sector'' (with Steffen
+        Juranek and Øivind Anti Nilsen). \textit{Journal of Competition Law \&
+        Economics}, 18(4) (2022), pp.~771--794.
+
+  \item ``Lump-sum payments and retail services: A relational contracting
+        perspective'' (with Teis L. Lømo). \textit{Journal of Industrial
+        Economics}, 69 (2021), pp.~131--168.
+
+  \item ``Competing buyers, rent extraction and inefficient exclusion.''
+        \textit{International Journal of Industrial Organization}, 68 (2020).
+
+  \item ``Upstream merger in a successive oligopoly: Who pays the price?'' (with
+        Øivind Anti Nilsen and Lars Sørgard). \textit{International Journal of
+        Industrial Organization}, 48 (2016), pp.~143--172.
+
+  \item ``Interlocking relationships and quantity rationing.''
+        \textit{Economics Letters}, 146 (2016), pp.~47--49.
+
+  \item ``Menu contracts and the division of profits in vertical
+        relationships.'' \textit{Economics Letters}, 138 (2016), pp.~72--74.
+\end{itemize}
+
+\section{Work in Progress}
+\begin{itemize}
+  \item ``Do Informed Consumers Pay Less? Evidence from a Survey with Linked
+        Grocery Purchase Data'' (with Richard Friberg, Emil Halseth and Frode
+        Steen).
+
+  \item ``Climate-Impact Knowledge and Consumer Behavior: Evidence from a
+        Randomized Information Experiment Linked to Scanner Data'' (with David
+        Bilén, Mathias Ekström and Frode Steen).
+
+  \item ``Unemployment shocks, cyclical prices and shopping behavior'' (with
+        Thor Andreas Aursland, Richard Friberg and Frode Steen).
+
+  \item ``Exclusionary contracts and investment'' (with Greg Shaffer).
+\end{itemize}
+
+\section{Publications in Norwegian}
+\begin{itemize}
+  \item ``Annerledeslandet Norge: Butikktilgjengelighet og markedskonsentrasjon
+        i Sverige og Norge'' (with Richard Friberg, Ivar Pettersen and Frode
+        Steen). Book chapter in \textit{Mot bedre vitende i norsk matsektor}
+        (2020), pp.~35--70.
+
+  \item ``Produktivitetsutvikling i norsk matsektor'' (with Ivar Pettersen and
+        Frode Steen). Book chapter in \textit{Mot bedre vitende i norsk
+        matsektor} (2020), pp.~71--123.
+
+  \item ```Sukkeravgiften' skal øke statens inntekter og redusere
+        sukkerforbruket -- men virker den?'' (with Frode Steen).
+        \textit{Praktisk økonomi \& finans}, 35(1) (2019), pp.~69--84.
+\end{itemize}
+
+\section{Publications in Other Fields}
+\begin{itemize}
+  \item ``Conversation logs as a source of insight: Predicting user satisfaction
+        for customer service chatbots'' (with F.~C. Ay, E. Freddi, A. Følstad,
+        S. Hodnebrog, K. Kvale and O.~A. Sell). \textit{Quality and User
+        Experience}, 10(1) (2025).
+
+  \item ``Understanding the difference between office presence and co-presence
+        in team member interactions'' (with Brede Nils Moe, Darja Smite, Jarle
+        Moss Hildrum and Fehime Ceren Ay). 57th Hawaii International Conference
+        on System Sciences (HICSS), (2024).
+
+  \item ``A method for validation of socio-economic impact from connectivity
+        solutions in rural communities'' (with Per J. Nesse and Rick Gilsing).
+        2024 IEEE International Conference on Engineering, Technology, and
+        Innovation (ICE/ITMC), (2024).
+\end{itemize}
+
+\section{Affiliations}
+\begin{itemize}
+  \item Associated researcher, The FOOD Research Project, NHH.
+\end{itemize}
+
+\end{document}

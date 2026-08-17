@@ -1,0 +1,54 @@
+# Compiles the LaTeX CV in the cloud and publishes the PDF to the site root.
+#
+# Nothing is installed locally: GitHub runs a full TeX Live container, compiles
+# cv/cv.tex, and commits the resulting cv.pdf back to the repo. The site links
+# to /cv.pdf, so pushing a .tex change is the only step needed to update the CV
+# visitors download.
+#
+# Runs on every push that touches cv/, and can also be triggered by hand from
+# the Actions tab (workflow_dispatch).
+name: Build CV
+
+on:
+  push:
+    paths:
+      - 'cv/**'
+      - '.github/workflows/build-cv.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# If two pushes land close together, let the newer one win rather than racing
+# to commit the PDF.
+concurrency:
+  group: build-cv
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile cv/cv.tex
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: cv.tex
+          working_directory: cv
+          # latexmk resolves the number of passes bibtex/biber and any
+          # cross-references need.
+          latexmk_use_xelatex: false
+
+      - name: Publish PDF to site root
+        run: |
+          mv cv/cv.pdf cv.pdf
+          if git diff --quiet -- cv.pdf; then
+            echo "CV unchanged — nothing to commit."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cv.pdf
+          git commit -m "Rebuild cv.pdf from LaTeX source"
+          git push

@@ -43,12 +43,15 @@ jobs:
       - name: Publish PDF to site root
         run: |
           mv cv/cv.pdf cv.pdf
-          if git diff --quiet -- cv.pdf; then
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Stage before testing for changes. `git diff` alone reports nothing
+          # for an untracked path, so checking before `git add` would report
+          # "unchanged" on the very first run and never publish the PDF at all.
+          git add cv.pdf
+          if git diff --cached --quiet; then
             echo "CV unchanged — nothing to commit."
             exit 0
           fi
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add cv.pdf
           git commit -m "Rebuild cv.pdf from LaTeX source"
           git push

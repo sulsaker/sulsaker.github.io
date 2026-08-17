@@ -30,6 +30,13 @@ commits the resulting PDF back to the repo.
 So the update loop is: **change `cv/cv.tex` → push → the PDF on the site
 refreshes itself in ~2 minutes.**
 
+`cv/cv.tex` is deliberately **self-contained** — all layout macros are defined
+at the top of the file. The original Overleaf version pulled in a separate
+`structure.tex`, which the cloud build would not have found. Keep it that way:
+if you add packages, add them in the preamble rather than in an included file.
+A handful of `% TODO` comments in the source flag details that need your
+decision (see the notes in the file header).
+
 To keep editing in Overleaf rather than in the repo, link the two so a push in
 Overleaf lands in `cv/`:
 

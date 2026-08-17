@@ -37,16 +37,21 @@ if you add packages, add them in the preamble rather than in an included file.
 A handful of `% TODO` comments in the source flag details that need your
 decision (see the notes in the file header).
 
-To keep editing in Overleaf rather than in the repo, link the two so a push in
-Overleaf lands in `cv/`:
+Overleaf is out of the loop entirely — this repo is the only home for the CV.
+Edit `cv/cv.tex` either locally or in GitHub's web editor (press `.` on the repo
+page), then push.
 
-1. In Overleaf, open the project menu → **Sync → GitHub**.
-2. Point it at this repo. (Overleaf's GitHub sync is a paid feature — check
-   whether OsloMet's site licence covers it before relying on this step.)
+To check your changes before pushing, you have MiKTeX installed, so you can
+compile locally:
 
-If Overleaf sync isn't available, the fallback is to keep the source here and
-edit it directly — either in the GitHub web editor or locally — which removes
-Overleaf from the loop entirely and still gives you a one-step update.
+```
+cd cv
+pdflatex cv.tex
+```
+
+That produces `cv/cv.pdf` for previewing. Don't commit it — it's gitignored, and
+the Action builds the published copy at the repo root. The local build only
+needs to succeed for the cloud build to succeed; they use the same file.
 
 You can also rebuild the PDF without changing anything: **Actions → Build CV →
 Run workflow**.

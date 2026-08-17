@@ -1,6 +1,8 @@
-# LaTeX build litter — the CV is compiled by GitHub Actions, not committed
-# half-built. cv.pdf itself IS committed (the site serves it), so it is not
-# ignored here.
+# LaTeX build litter. The published PDF lives at the repo root as /cv.pdf and
+# IS committed (the site serves it) — it is the Action's output. A local
+# preview build lands at cv/cv.pdf instead, and that one is ignored so it can
+# never be mistaken for the published copy.
+cv/cv.pdf
 cv/*.aux
 cv/*.bbl
 cv/*.bcf
